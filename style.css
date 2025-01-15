@@ -1,98 +1,89 @@
-/* General Styles */
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  box-sizing: border-box;
   color: #333;
+  line-height: 1.6;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 header {
-  background-color: #2a6f4e;
+  background: linear-gradient(to bottom, #6db3f2, #1c92d2);
   color: white;
   text-align: center;
-  padding: 1.5em 0;
+  padding: 2em 1em;
 }
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-  background: #333;
+header .hero h1 {
+  font-size: 2.5em;
+  margin: 0.5em 0;
 }
-
-nav ul li {
-  display: inline;
-  margin: 0;
+header .hero p {
+  font-size: 1.2em;
 }
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5em 1em;
+header .btn {
   display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background: white;
+  color: #1c92d2;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+header .btn:hover {
+  background: #eaeaea;
 }
 
-nav ul li a:hover {
-  background: #2a6f4e;
+nav {
+  background: #f8f8f8;
+  padding: 0.5em 1em;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin: 0 1em;
 }
 
 section {
-  padding: 2em;
+  padding: 2em 1em;
   max-width: 800px;
   margin: auto;
-  background: white;
+}
+section h2 {
+  font-size: 1.8em;
   margin-bottom: 1em;
-  border-radius: 5px;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1em;
 }
-
 .gallery img {
   width: 100%;
   border-radius: 5px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-form input, form textarea, form button {
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-form button {
-  background: #2a6f4e;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: #245640;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-  text-align: center;
-  padding: 1em 0;
   background: #333;
   color: white;
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 2em;
 }
-script.js
-This file contains JavaScript for handling form submissions.
-
-javascript
-Copy code
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-  event.preventDefault();
-  alert("Thank you for your message! We'll get back to you soon.");
-});
