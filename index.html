@@ -3,51 +3,260 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arran Hilltop Holiday Cottage</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Arran Hilltop Luxury Retreat</title>
+  <style>
+    /* Enhanced Global Styles */
+    body {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: #2c3e50;
+      line-height: 1.8;
+    }
+
+    /* Refined Typography */
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    a {
+      color: #34495e;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    /* Elegant Header */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 8em 1em;
+      position: relative;
+    }
+
+    header .hero h1 {
+      font-size: 3.5em;
+      margin: 0.5em 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    header .hero p {
+      font-size: 1.4em;
+      max-width: 600px;
+      margin: 1em auto;
+      font-style: italic;
+    }
+
+    header .btn {
+      display: inline-block;
+      margin-top: 1.5em;
+      padding: 1em 2em;
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      border-radius: 0;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+    }
+
+    header .btn:hover {
+      background: white;
+      color: #2c3e50;
+    }
+
+    /* Sophisticated Navigation */
+    nav {
+      background: white;
+      padding: 1em;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 2em;
+    }
+
+    nav ul li a {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9em;
+      font-weight: 500;
+    }
+
+    /* Refined Sections */
+    section {
+      padding: 4em 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2.2em;
+      margin-bottom: 1em;
+      text-align: center;
+      position: relative;
+    }
+
+    section h2:after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 2px;
+      background: #34495e;
+      margin: 0.5em auto;
+    }
+
+    /* Enhanced Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2em;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Booking Section */
+    #booking {
+      background: #f9f9f9;
+      padding: 4em 2em;
+    }
+
+    .booking-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2em;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .booking-form input,
+    .booking-form select {
+      width: 100%;
+      padding: 1em;
+      margin: 0.5em 0;
+      border: 1px solid #ddd;
+      font-family: inherit;
+    }
+
+    .booking-form button {
+      width: 100%;
+      padding: 1em;
+      background: #34495e;
+      color: white;
+      border: none;
+      margin-top: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .booking-form button:hover {
+      background: #2c3e50;
+    }
+
+    /* Elegant Footer */
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2em 0;
+      margin-top: 2em;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="hero">
-      <h1>Arran Hilltop Holiday Cottage</h1>
-      <p>Your perfect getaway on the Isle of Arran</p>
-      <a href="#about" class="btn">Learn More</a>
+      <h1>Arran Hilltop Luxury Retreat</h1>
+      <p>Experience the epitome of Scottish Highland luxury in our exclusive hilltop sanctuary</p>
+      <a href="#booking" class="btn">Reserve Your Stay</a>
     </div>
   </header>
-
   <nav>
     <ul>
-      <li><a href="#about">About</a></li>
+      <li><a href="#about">Experience</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#booking">Book Now</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-
   <section id="about">
-    <h2>About Us</h2>
+    <h2>A Highland Haven</h2>
     <p>
-      Nestled on the beautiful Isle of Arran, our 3-bedroom holiday cottage is the perfect retreat. Enjoy stunning hilltop views, cozy interiors, and the tranquility of nature.
+      Perched majestically above the stunning Isle of Arran landscape, our exclusive three-bedroom retreat offers an unparalleled luxury escape. This thoughtfully appointed sanctuary seamlessly blends contemporary elegance with traditional Scottish charm, providing an exceptional setting for your highland getaway.
+    </p>
+    <p>
+      Immerse yourself in panoramic views of rolling hills and dramatic coastlines from every window. Our retreat features bespoke furnishings, premium amenities, and spacious living areas designed to create an atmosphere of sophisticated comfort and tranquility.
     </p>
   </section>
-
   <section id="gallery">
-    <h2>Gallery</h2>
+    <h2>Captured Moments</h2>
     <div class="gallery">
-      <img src="images/outside_view1.jpg" alt="Cottage Exterior">
-      <img src="images/bedroom_view.jpg" alt="Stunning Bedroom Views">
-      <img src="images/hillside_view.jpg" alt="Beautiful hilltop view">
+      <img src="images/outside_view1.jpg" alt="Elegant Cottage Exterior">
+      <img src="images/bedroom_view.jpg" alt="Luxurious Master Suite with Panoramic Views">
+      <img src="images/hillside_view.jpg" alt="Breathtaking Highland Vistas">
     </div>
   </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email us at <a href="mailto:arrancottage@example.com">arrancottage@example.com</a> or call us at +44 1234 567890.</p>
+  <section id="booking">
+    <h2>Reserve Your Escape</h2>
+    <div class="booking-form">
+      <form id="reservationForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="date" id="checkIn" required>
+        <input type="date" id="checkOut" required>
+        <select id="guests" required>
+          <option value="">Number of Guests</option>
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5">5 Guests</option>
+          <option value="6">6 Guests</option>
+        </select>
+        <button type="submit">Check Availability</button>
+      </form>
+    </div>
   </section>
-
+  <section id="contact">
+    <h2>Connect With Us</h2>
+    <p>For personalized assistance and special requests, please contact our dedicated concierge team:</p>
+    <p>Email: <a href="mailto:concierge@arranhilltop.com">concierge@arranhilltop.com</a></p>
+    <p>Direct Line: +44 1234 567890</p>
+  </section>
   <footer>
-    <p>&copy; 2025 Arran Hilltop Holiday Cottage. All rights reserved.</p>
+    <p>&copy; 2025 Arran Hilltop Luxury Retreat. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
