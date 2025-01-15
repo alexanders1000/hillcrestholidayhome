@@ -1,4 +1,0 @@
-gem install jekyll bundler
-
-jekyll new arran-farmhouse
-cd arran-farmhouse
