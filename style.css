@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #2a6f4e;
+  color: white;
+  text-align: center;
+  padding: 1.5em 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  background: #333;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  background: #2a6f4e;
+}
+
+section {
+  padding: 2em;
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1em;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+form input, form textarea, form button {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background: #2a6f4e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #245640;
+}
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+  background: #333;
+  color: white;
+}
+script.js
+This file contains JavaScript for handling form submissions.
+
+javascript
+Copy code
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  alert("Thank you for your message! We'll get back to you soon.");
+});
