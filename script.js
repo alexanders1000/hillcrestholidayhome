@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
   checkInInput.addEventListener('change', function() {
     const checkInDate = new Date(checkInInput.value);
     const minCheckOutDate = new Date(checkInDate);
-    minCheckOutDate.setDate(checkInDate.getDate() + 4); // Minimum 4-night stay
+    minCheckOutDate.setDate(checkInDate.getDate() + 6); // Minimum 6-night stay
     
     checkOutInput.min = minCheckOutDate.toISOString().split('T')[0];
     if (checkOutInput.value && new Date(checkOutInput.value) < minCheckOutDate) {
