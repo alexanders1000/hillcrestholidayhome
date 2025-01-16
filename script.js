@@ -1,4 +1,3 @@
-// Booking form functionality
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('reservationForm');
   const checkInInput = document.getElementById('checkIn');
@@ -8,36 +7,34 @@ document.addEventListener('DOMContentLoaded', function() {
   const today = new Date().toISOString().split('T')[0];
   checkInInput.min = today;
 
-  // Update checkout minimum date based on checkin
+  // Update checkout minimum date based on checkin and enforce 4-night minimum stay
   checkInInput.addEventListener('change', function() {
-    checkOutInput.min = checkInInput.value;
-    if (checkOutInput.value && checkOutInput.value < checkInInput.value) {
-      checkOutInput.value = checkInInput.value;
+    const checkInDate = new Date(checkInInput.value);
+    const minCheckOutDate = new Date(checkInDate);
+    minCheckOutDate.setDate(checkInDate.getDate() + 4); // Minimum 4-night stay
+    
+    checkOutInput.min = minCheckOutDate.toISOString().split('T')[0];
+    if (checkOutInput.value && new Date(checkOutInput.value) < minCheckOutDate) {
+      checkOutInput.value = minCheckOutDate.toISOString().split('T')[0];
     }
   });
 
-  // Calculate number of nights and estimated price
+  // Calculate number of nights and price based on season
   function calculatePrice(checkIn, checkOut) {
     const oneDay = 24 * 60 * 60 * 1000;
     const startDate = new Date(checkIn);
     const endDate = new Date(checkOut);
-    const nights = Math.round(Math.abs((startDate - endDate) / oneDay));
+    const nights = Math.round(Math.abs((endDate - startDate) / oneDay));
     
-    // Base price per night (in GBP)
-    const basePrice = 250;
-    
-    // Peak season adjustment (June to September)
+    // Check if dates are within Oct-Feb (months 9-1)
     const month = startDate.getMonth();
-    const peakSeasonMultiplier = (month >= 5 && month <= 8) ? 1.25 : 1;
+    const isLowSeason = month >= 9 || month <= 1;
+    const pricePerNight = isLowSeason ? 100 : 160;
     
-    // Weekend adjustment
-    const isWeekend = startDate.getDay() === 5 || startDate.getDay() === 6;
-    const weekendMultiplier = isWeekend ? 1.2 : 1;
-    
-    return Math.round(basePrice * nights * peakSeasonMultiplier * weekendMultiplier);
+    return pricePerNight * nights;
   }
 
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const formData = {
@@ -50,11 +47,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const estimatedPrice = calculatePrice(formData.checkIn, formData.checkOut);
 
-    // Show booking summary in a modal
-    showBookingSummary(formData, estimatedPrice);
+    // Send email using EmailJS or similar service
+    try {
+      await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        to_email: 'arranhilltopholidaycottage@gmail.com',
+        from_name: formData.name,
+        from_email: formData.email,
+        check_in: new Date(formData.checkIn).toLocaleDateString(),
+        check_out: new Date(formData.checkOut).toLocaleDateString(),
+        guests: formData.guests,
+        total_price: estimatedPrice,
+        message: `New booking request from ${formData.name}
+                 Check-in: ${new Date(formData.checkIn).toLocaleDateString()}
+                 Check-out: ${new Date(formData.checkOut).toLocaleDateString()}
+                 Guests: ${formData.guests}
+                 Total Price: £${estimatedPrice}`
+      });
+      showBookingSummary(formData, estimatedPrice, true);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      showBookingSummary(formData, estimatedPrice, false);
+    }
   });
 
-  function showBookingSummary(formData, price) {
+  function showBookingSummary(formData, price, emailSent) {
     // Create modal element
     const modal = document.createElement('div');
     modal.style.cssText = `
@@ -71,13 +87,18 @@ document.addEventListener('DOMContentLoaded', function() {
       width: 90%;
     `;
 
+    const emailStatus = emailSent 
+      ? '<p style="color: green;">Your booking request has been sent successfully!</p>'
+      : '<p style="color: red;">There was an error sending your request. Please try again later.</p>';
+
     modal.innerHTML = `
       <h3 style="margin-top: 0;">Booking Summary</h3>
       <p><strong>Guest:</strong> ${formData.name}</p>
       <p><strong>Check-in:</strong> ${new Date(formData.checkIn).toLocaleDateString()}</p>
       <p><strong>Check-out:</strong> ${new Date(formData.checkOut).toLocaleDateString()}</p>
       <p><strong>Guests:</strong> ${formData.guests}</p>
-      <p><strong>Estimated Total:</strong> £${price}</p>
+      <p><strong>Total Price:</strong> £${price}</p>
+      ${emailStatus}
       <p style="font-size: 0.9em; color: #666;">A member of our team will contact you shortly to confirm availability and process your booking.</p>
       <button onclick="this.parentElement.remove()" style="
         background: #34495e;
