@@ -36,69 +36,73 @@
       <img src="images/hillside_view.jpg" alt="Beautiful hilltop view">
     </div>
   </section>
-  <section id="booking">
-    <h2>Book Your Stay</h2>
-    <div class="booking-form">
-      <div class="price-display">
-        <div class="nightly-price">
-          <span class="price-amount">£100</span>
-          <span class="price-period">per night</span>
+
+  <!-- Booking section
+  <!-- Replace your current booking section with this -->
+<section id="booking">
+  <h2>Book Your Stay</h2>
+  <div class="booking-form">
+    <div class="price-display">
+      <div class="nightly-price">
+        <span class="price-amount">£100</span>
+        <span class="price-period">per night</span>
+      </div>
+      <div class="season-indicator">Low season pricing</div>
+    </div>
+
+    <form id="reservationForm">
+      <div class="form-dates">
+        <div class="form-group">
+          <label for="checkIn">Check-in</label>
+          <input type="date" id="checkIn" required>
         </div>
-        <div class="season-indicator">Low season pricing</div>
+        
+        <div class="form-group">
+          <label for="checkOut">Check-out</label>
+          <input type="date" id="checkOut" required>
+        </div>
       </div>
 
-      <form id="reservationForm">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" required>
-        </div>
-        
-        <div class="form-dates">
-          <div class="form-group">
-            <label for="checkIn">Check-in</label>
-            <input type="date" id="checkIn" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="checkOut">Check-out</label>
-            <input type="date" id="checkOut" required>
-          </div>
-        </div>
+      <div class="form-group">
+        <label for="guests">Guests</label>
+        <select id="guests" required>
+          <option value="1">1 guest</option>
+          <option value="2">2 guests</option>
+          <option value="3">3 guests</option>
+          <option value="4">4 guests</option>
+          <option value="5">5 guests</option>
+          <option value="6">6 guests</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label for="guests">Number of Guests</label>
-          <select id="guests" required>
-            <option value="1">1 guest</option>
-            <option value="2">2 guests</option>
-            <option value="3">3 guests</option>
-            <option value="4">4 guests</option>
-            <option value="5">5 guests</option>
-            <option value="6">6 guests</option>
-          </select>
-        </div>
-
-        <div class="booking-summary hidden">
-          <div class="price-breakdown">
-            <div class="price-line">
-              <span>£<span class="nightly-rate">100</span> × <span class="num-nights">0</span> nights</span>
-              <span class="total-nights-price">£0</span>
-            </div>
-            <div class="price-line total">
-              <span>Total</span>
-              <span class="total-price">£0</span>
-            </div>
+      <div class="booking-summary hidden">
+        <div class="price-breakdown">
+          <div class="price-line">
+            <span>£<span class="nightly-rate">100</span> × <span class="num-nights">0</span> nights</span>
+            <span class="total-nights-price">£0</span>
+          </div>
+          <div class="price-line total">
+            <span>Total</span>
+            <span class="total-price">£0</span>
           </div>
         </div>
+      </div>
 
-        <button type="submit">Request to Book</button>
-      </form>
-    </div>
-  </section>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <button type="submit">Request to Book</button>
+    </form>
+  </div>
+</section>
+  
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Email us at <a href="mailto:arranhilltopholidaycottage@gmail.com">arranhilltopholidaycottage@gmail.com</a> or call us at +44 1234 567890.</p>
