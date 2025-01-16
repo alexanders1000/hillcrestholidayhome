@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
       email: document.getElementById('email').value,
       checkIn: checkInInput.value,
       checkOut: checkOutInput.value,
-      guests: document.getElementById('guests').value
+      <!-- guests: document.getElementById('guests').value
     };
 
     const pricing = calculatePrice(formData.checkIn, formData.checkOut);
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Check-in: ${new Date(formData.checkIn).toLocaleDateString()}
       Check-out: ${new Date(formData.checkOut).toLocaleDateString()}
       Nights: ${pricing.nights}
-      Guests: ${formData.guests}
+      <!-- Guests: ${formData.guests}
       Price per night: £${pricing.pricePerNight}
       Total Price: £${pricing.total}
     `;
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <p><strong>Guest:</strong> ${formData.name}</p>
       <p><strong>Check-in:</strong> ${new Date(formData.checkIn).toLocaleDateString()}</p>
       <p><strong>Check-out:</strong> ${new Date(formData.checkOut).toLocaleDateString()}</p>
-      <p><strong>Guests:</strong> ${formData.guests}</p>
+      <!-- <p><strong>Guests:</strong> ${formData.guests}</p>
       <p><strong>Total Price:</strong> £${price}</p>
       <p style="font-size: 0.9em; color: #666;">Your booking request has been sent. We will contact you shortly to confirm availability.</p>
       <button onclick="this.parentElement.remove()" style="
