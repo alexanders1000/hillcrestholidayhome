@@ -3,139 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arran Hilltop Luxury Retreat</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Arran Hilltop Holiday Cottage</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="hero">
-      <h1>Arran Hilltop Luxury Retreat</h1>
-      <p>Experience the epitome of Scottish Highland luxury in our exclusive hilltop sanctuary</p>
-      <a href="#booking" class="btn">Reserve Your Stay</a>
+      <h1>Arran Hilltop Holiday Cottage</h1>
+      <p>Your perfect getaway on the Isle of Arran</p>
+      <a href="#about" class="btn">Learn More</a>
     </div>
   </header>
   <nav>
     <ul>
-      <li><a href="#about">Experience</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#booking">Book Now</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
   <section id="about">
-    <h2>A Highland Haven</h2>
+    <h2>About Us</h2>
     <p>
-      Perched majestically above the stunning Isle of Arran landscape, our exclusive three-bedroom retreat offers an unparalleled luxury escape. This thoughtfully appointed sanctuary seamlessly blends contemporary elegance with traditional Scottish charm, providing an exceptional setting for your highland getaway.
-    </p>
-    <p>
-      Immerse yourself in panoramic views of rolling hills and dramatic coastlines from every window. Our retreat features bespoke furnishings, premium amenities, and spacious living areas designed to create an atmosphere of sophisticated comfort and tranquility.
+      Nestled on the beautiful Isle of Arran, our 3-bedroom holiday cottage is the perfect retreat. Enjoy stunning hilltop views, cozy interiors, and the tranquility of nature.
     </p>
   </section>
   <section id="gallery">
-    <h2>Captured Moments</h2>
+    <h2>Gallery</h2>
     <div class="gallery">
-      <img src="images/fire.jpg" alt="Cosy Livingroom Fireplace">
-      <img src="images/bedroom_view.jpg" alt="Luxurious Master Suite with Panoramic Views">
-      <img src="images/hillside_view.jpg" alt="Breathtaking Highland Vistas">
+      <img src="images/fire.jpg" alt="Cosy Livingroom Fire">
+      <img src="images/bedroom_view.jpg" alt="Stunning Bedroom Views">
+      <img src="images/hillside_view.jpg" alt="Beautiful hilltop view">
     </div>
   </section>
   <section id="booking">
-    <h2>Reserve Your Escape</h2>
+    <h2>Book Your Stay</h2>
     <div class="booking-form">
+      <div class="price-display">
+        <div class="nightly-price">
+          <span class="price-amount">£100</span>
+          <span class="price-period">per night</span>
+        </div>
+        <div class="season-indicator">Low season pricing</div>
+      </div>
+
       <form id="reservationForm">
-        <input type="text" id="name" placeholder="Full Name" required>
-        <input type="email" id="email" placeholder="Email Address" required>
-        <input type="date" id="checkIn" required>
-        <input type="date" id="checkOut" required>
-        <select id="guests" required>
-          <option value="">Number of Guests</option>
-          <option value="1">1 Guest</option>
-          <option value="2">2 Guests</option>
-          <option value="3">3 Guests</option>
-          <option value="4">4 Guests</option>
-          <option value="5">5 Guests</option>
-          <option value="6">6 Guests</option>
-        </select>
-        <button type="submit">Check Availability</button>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        
+        <div class="form-dates">
+          <div class="form-group">
+            <label for="checkIn">Check-in</label>
+            <input type="date" id="checkIn" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="checkOut">Check-out</label>
+            <input type="date" id="checkOut" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="guests">Number of Guests</label>
+          <select id="guests" required>
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+            <option value="6">6 guests</option>
+          </select>
+        </div>
+
+        <div class="booking-summary hidden">
+          <div class="price-breakdown">
+            <div class="price-line">
+              <span>£<span class="nightly-rate">100</span> × <span class="num-nights">0</span> nights</span>
+              <span class="total-nights-price">£0</span>
+            </div>
+            <div class="price-line total">
+              <span>Total</span>
+              <span class="total-price">£0</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit">Request to Book</button>
       </form>
     </div>
   </section>
   <section id="contact">
-    <h2>Connect With Us</h2>
-    <p>For personalized assistance and special requests, please contact our dedicated concierge team:</p>
-    <p>Email: <a href="mailto:concierge@arranhilltop.com">arranhilltopholidaycottage@gmail.com</a></p>
-    <p>Direct Line: +44 1234 567890</p>
+    <h2>Contact Us</h2>
+    <p>Email us at <a href="mailto:arranhilltopholidaycottage@gmail.com">arranhilltopholidaycottage@gmail.com</a> or call us at +44 1234 567890.</p>
   </section>
   <footer>
-    <p>&copy; 2025 Arran Hilltop Luxury Retreat. All rights reserved.</p>
+    <p>&copy; 2025 Arran Hilltop Holiday Cottage. All rights reserved.</p>
   </footer>
-
-  <!-- Add this new section after your gallery section -->
-<section id="booking">
-  <h2>Book Your Stay</h2>
-  <div class="booking-form">
-    <div class="price-display">
-      <div class="nightly-price">
-        <span class="price-amount">£100</span>
-        <span class="price-period">per night</span>
-      </div>
-      <div class="season-indicator">Low season pricing</div>
-    </div>
-
-    <form id="reservationForm">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
-      </div>
-      
-      <div class="form-dates">
-        <div class="form-group">
-          <label for="checkIn">Check-in</label>
-          <input type="date" id="checkIn" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="checkOut">Check-out</label>
-          <input type="date" id="checkOut" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="guests">Number of Guests</label>
-        <select id="guests" required>
-          <option value="1">1 guest</option>
-          <option value="2">2 guests</option>
-          <option value="3">3 guests</option>
-          <option value="4">4 guests</option>
-          <option value="5">5 guests</option>
-          <option value="6">6 guests</option>
-        </select>
-      </div>
-
-      <div class="booking-summary hidden">
-        <div class="price-breakdown">
-          <div class="price-line">
-            <span>£<span class="nightly-rate">100</span> × <span class="num-nights">0</span> nights</span>
-            <span class="total-nights-price">£0</span>
-          </div>
-          <div class="price-line total">
-            <span>Total</span>
-            <span class="total-price">£0</span>
-          </div>
-        </div>
-      </div>
-
-      <button type="submit">Request to Book</button>
-    </form>
-  </div>
-</section>
-  
   <script src="script.js"></script>
 </body>
 </html>
