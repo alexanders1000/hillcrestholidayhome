@@ -209,4 +209,100 @@ footer {
   .gallery {
     grid-template-columns: 1fr;
   }
+
+  /* Add these styles to your existing CSS */
+
+/* Booking Form Enhancements */
+.price-display {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  background: #f9f9f9;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.nightly-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.price-amount {
+  font-size: 2em;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.price-period {
+  color: #666;
+  font-style: italic;
+}
+
+.season-indicator {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 0.5em;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.form-dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+
+.booking-summary {
+  margin-top: 2em;
+  padding: 1.5em;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.price-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.price-line.total {
+  padding-top: 1em;
+  margin-top: 0.5em;
+  border-top: 1px solid #ddd;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-dates {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-form {
+    padding: 1.5em;
+  }
+}
 }
